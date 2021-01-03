@@ -12,7 +12,6 @@ import pickle
 import time
 
 import tensorflow as tf
-tf.enable_eager_execution()
 from tqdm import tqdm
 
 from src.MultilingualDataLoader import ProcessMultilingualDataset

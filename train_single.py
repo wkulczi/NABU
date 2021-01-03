@@ -10,7 +10,6 @@ from src.arguments import get_args
 from src.trainers.GATtrainer import _train_gat_trans
 from src.trainers.TransformerTrainer import _train_transformer
 import tensorflow as tf
-tf.enable_eager_execution()
 
 if __name__ == "__main__":
   args = get_args()
