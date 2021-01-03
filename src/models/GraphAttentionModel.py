@@ -78,7 +78,8 @@ class TransGAT(tf.keras.Model):
   def __init__(self, args, src_vocab_size, src_lang,
                tgt_vocab_size, max_seq_len, tgt_vocab):
     super(TransGAT, self).__init__()
-    self.regularizer = tf.contrib.layers.l2_regularizer(scale=0.1)
+    self.regularizer = tf.keras.regularizers.l2(l2=0.1)
+    # self.regularizer = tf.contrib.layers.l2_regularizer(scale=0.1)
     self.emb_layer = EmbeddingLayer.EmbeddingSharedWeights(
       src_vocab_size, args.emb_dim)
 
