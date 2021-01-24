@@ -185,7 +185,7 @@ def _train_gat_trans(args):
         if batch % 100 == 0:
           print('Step {} Learning Rate {:.4f} Train Loss {:.4f} '
                 'Accuracy {:.4f} Perplex {:.4f}'.format(PARAMS['step'],
-                                                        optimizer._lr,
+                                                        optimizer.get_config()['learning_rate'],
                                                         train_loss.result(),
                                                         acc.numpy(),
                                                         ppl.numpy()))

@@ -75,10 +75,13 @@ class SequenceBeamSearch(object):
     # Account for corner case where there are no finished sequences for a
     # particular batch item. In that case, return alive sequences for that batch
     # item.
+
+    # REMOVED THE 1 HERE, NOT SURE
+
     finished_seq = tf.where(
-      tf.reduce_any(finished_flags, 1), finished_seq, alive_seq)
+      tf.reduce_any(finished_flags), finished_seq, alive_seq)
     finished_scores = tf.where(
-      tf.reduce_any(finished_flags, 1), finished_scores, alive_log_probs)
+      tf.reduce_any(finished_flags), finished_scores, alive_log_probs)
     return finished_seq, finished_scores
 
   def _create_initial_state(self, initial_ids, initial_cache):
