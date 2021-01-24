@@ -19,8 +19,8 @@ _NEG_INF = -1e9
 
 def _set_up_dirs(args):
   if args.use_colab is None:
-    EvalResultsFile = 'eval_results.txt'
-    TestResults = 'test_results.txt'
+    EvalResultsFile = args.lang+'_eval_results.txt'
+    TestResults = args.lang+'_test_results.txt'
     OUTPUT_DIR = 'ckpts/' + args.lang
     log_dir = 'data/logs'
     log_file = log_dir + args.lang + '_' + args.enc_type + '_' + str(args.emb_dim) + '.log'
